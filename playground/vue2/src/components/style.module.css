@@ -1,0 +1,14 @@
+.hello h3 {
+  margin: 40px 0 0;
+}
+.hello ul {
+  list-style-type: none;
+  padding: 0;
+}
+.hello li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.hello a {
+  color: #42b983;
+}

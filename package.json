@@ -1,17 +1,17 @@
 {
-  "name": "unplugin-starter",
+  "name": "unplugin-vue-jsx-hmr",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@7.1.1",
-  "description": "Register global imports on demand for Vite and Webpack",
+  "description": "Provides Vue 2/3 JSX & TSX support with HMR.",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/unplugin-starter#readme",
+  "homepage": "https://github.com/antfu/unplugin-vue-jsx#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-starter.git"
+    "url": "git+https://github.com/antfu/unplugin-vue-jsx.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-starter/issues"
+    "url": "https://github.com/antfu/unplugin-vue-jsx/issues"
   },
   "keywords": [
     "unplugin",
@@ -77,18 +77,36 @@
     "dev": "tsup --watch src",
     "build:fix": "esno scripts/postbuild.ts",
     "lint": "eslint .",
-    "play": "npm -C playground run dev",
-    "prepublishOnly": "npm run build",
+    "play:vue2": "pnpm --filter ./playground/vue2 run serve",
+    "play:vue3": "pnpm --filter ./playground/vue3 run serve",
+    "prepublishOnly": "npm run lint && npm run build",
     "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
-    "test": "vitest"
+    "start": "esno src/core/vue2.ts",
+    "test": "vitest",
+    "coverage": "npm run test:build && vitest run --coverage"
+  },
+  "peerDependencies": {
+    "vite": ">= 4.x",
+    "vue": ">= 2.x"
   },
   "dependencies": {
-    "unplugin": "^1.0.1"
+    "@babel/core": "^7.20.12",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/traverse": "^7.20.13",
+    "@babel/types": "^7.20.7",
+    "@rollup/pluginutils": "^5.0.2",
+    "@vue/babel-preset-app": "^5.0.8",
+    "semver": "^7.3.8",
+    "unplugin": "^1.0.1",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
+    "@babel/plugin-transform-typescript": "^7.20.13",
+    "@types/babel__core": "^7.20.0",
+    "@types/babel__traverse": "^7.18.3",
     "@types/node": "^18.11.13",
+    "@vitest/coverage-c8": "^0.28.4",
     "bumpp": "^8.2.1",
     "chalk": "^5.2.0",
     "eslint": "^8.29.0",
@@ -101,6 +119,11 @@
     "typescript": "^4.9.4",
     "vite": "^4.0.0",
     "vitest": "^0.25.7",
+    "vue": "^2.7.14",
     "webpack": "^5.75.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
