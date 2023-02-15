@@ -19,7 +19,7 @@ export default createUnplugin<Options | undefined, boolean>((options = {} as any
   }
 
   return {
-    name: 'unplugin-vue-jsx',
+    name: 'unplugin-vue-jsx-hmr',
     transformInclude(id) {
       return filter(id)
     },

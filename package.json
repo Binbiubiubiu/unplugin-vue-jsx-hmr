@@ -5,13 +5,13 @@
   "packageManager": "pnpm@7.1.1",
   "description": "Provides Vue 2/3 JSX & TSX support with HMR.",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/unplugin-vue-jsx#readme",
+  "homepage": "https://github.com/antfu/unplugin-vue-jsx-hmr#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-vue-jsx.git"
+    "url": "git+https://github.com/antfu/unplugin-vue-jsx-hmr.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-vue-jsx/issues"
+    "url": "https://github.com/antfu/unplugin-vue-jsx-hmr/issues"
   },
   "keywords": [
     "unplugin",

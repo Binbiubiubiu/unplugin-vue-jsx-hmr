@@ -1,28 +1,14 @@
-# unplugin-vue-jsx
+# unplugin-vue-jsx-hmr
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-vue-jsx?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-vue-jsx)
+[![NPM version](https://img.shields.io/npm/v/unplugin-vue-jsx-hmr?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-vue-jsx-hmr)
 
 Starter template for [unplugin](https://github.com/unjs/unplugin).
 
-## Template Usage
-
-To use this template, clone it down using:
-
-```bash
-npx degit antfu/unplugin-vue-jsx my-unplugin
-```
-
-And do a global replace of `unplugin-vue-jsx` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
 
 ## Install
 
 ```bash
-npm i unplugin-vue-jsx
+npm i unplugin-vue-jsx-hmr
 ```
 
 <details>
@@ -30,7 +16,7 @@ npm i unplugin-vue-jsx
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-vue-jsx/vite'
+import Starter from 'unplugin-vue-jsx-hmr/vite'
 
 export default defineConfig({
   plugins: [
@@ -48,7 +34,7 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-vue-jsx/rollup'
+import Starter from 'unplugin-vue-jsx-hmr/rollup'
 
 export default {
   plugins: [
@@ -68,7 +54,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-vue-jsx/webpack')({ /* options */ })
+    require('unplugin-vue-jsx-hmr/webpack')({ /* options */ })
   ]
 }
 ```
@@ -82,7 +68,7 @@ module.exports = {
 // nuxt.config.js
 export default {
   buildModules: [
-    ['unplugin-vue-jsx/nuxt', { /* options */ }],
+    ['unplugin-vue-jsx-hmr/nuxt', { /* options */ }],
   ],
 }
 ```
@@ -99,7 +85,7 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-vue-jsx/webpack')({ /* options */ }),
+      require('unplugin-vue-jsx-hmr/webpack')({ /* options */ }),
     ],
   },
 }
@@ -113,7 +99,7 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-vue-jsx/esbuild'
+import Starter from 'unplugin-vue-jsx-hmr/esbuild'
 
 build({
   plugins: [Starter()],

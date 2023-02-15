@@ -6,7 +6,7 @@ module.exports = defineConfig({
   },
   configureWebpack: {
     plugins: [
-      require('unplugin-vue-jsx/webpack')({
+      require('unplugin-vue-jsx-hmr/webpack')({
         vueBabel:{
           modules: false,
           // targets:[
