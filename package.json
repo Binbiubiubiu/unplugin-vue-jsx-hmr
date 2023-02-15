@@ -85,7 +85,7 @@
     "release": "bumpp && npm publish",
     "start": "esno src/core/vue2.ts",
     "test": "vitest",
-    "coverage": "npm run test:build && vitest run --coverage"
+    "coverage": "vitest run --coverage"
   },
   "peerDependencies": {
     "vite": ">= 4.x",
