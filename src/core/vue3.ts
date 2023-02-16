@@ -105,13 +105,11 @@ export class Vue3HotApi implements HotApiInterface {
   templateWebpack(hotComponents: HotComponent[]) {
     let hmrIds = ''
     let record = ''
-    let args = ''
     let reload = ''
-    hotComponents.forEach(({ id, local, exported }) => {
+    hotComponents.forEach(({ id, local }) => {
       hmrIds += `${local}.__hmrId = "${id}";\n`
-      record += `hotAPI.createRecord("${id}", ${local}.options);\n`
-      args += `${exported}: __${exported},\n`
-      reload += `hotAPI.reload('${id}', __${exported});\n`
+      record += `hotAPI.createRecord("${id}", ${local});\n`
+      reload += `hotAPI.reload('${id}',${local});\n`
     })
     return `\n/* hot reload */\n
       if (module.hot) {\n
@@ -122,7 +120,6 @@ export class Vue3HotApi implements HotApiInterface {
             ${hmrIds}\n
             ${record}\n
           } else {\n
-            var {${args}} = module.hot.data;\n
             ${reload}\n
           }\n
         })()\n

@@ -20,10 +20,14 @@ npm i unplugin-vue-jsx-hmr
 ```ts
 // vite.config.ts
 import Starter from 'unplugin-vue-jsx-hmr/vite'
+// use vue2
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 export default defineConfig({
   plugins: [
     Starter({ /* options */ }),
+    // use vue2
+    viteCommonjs()
   ],
 })
 ```
