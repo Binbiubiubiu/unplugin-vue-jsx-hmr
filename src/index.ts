@@ -4,7 +4,7 @@ import { createPluginContext, createTransformer, normalizeOptions } from './core
 import type { Options } from './types'
 
 export default createUnplugin<Options | undefined, boolean>((options = {} as any, meta) => {
-  normalizeOptions(options)
+  options = normalizeOptions(options)
   const { include, exclude } = options
   const filter = createFilter(include, exclude)
 
@@ -15,7 +15,7 @@ export default createUnplugin<Options | undefined, boolean>((options = {} as any
   }
   else if (meta.framework === 'esbuild') {
     ctx.set_root(meta.build?.initialOptions.absWorkingDir)
-    ctx.set_hmr(!!meta.watchMode)
+    // ctx.set_hmr(!!meta.watchMode)
   }
 
   return {
@@ -29,7 +29,7 @@ export default createUnplugin<Options | undefined, boolean>((options = {} as any
     rollup: {
       outputOptions(config) {
         ctx.set_root(config.dir)
-        ctx.set_hmr(!!meta.watchMode)
+        // ctx.set_hmr(!!meta.watchMode)
       },
     },
     vite: {

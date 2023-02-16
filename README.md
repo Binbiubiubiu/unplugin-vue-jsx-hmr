@@ -2,7 +2,10 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-vue-jsx-hmr?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-vue-jsx-hmr)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+
+## Usage
+
+Supports VUE2/3 non-SSR environments with hot-reload
 
 
 ## Install
@@ -29,22 +32,6 @@ Example: [`playground/`](./playground/)
 
 <br></details>
 
-<details>
-<summary>Rollup</summary><br>
-
-```ts
-// rollup.config.js
-import Starter from 'unplugin-vue-jsx-hmr/rollup'
-
-export default {
-  plugins: [
-    Starter({ /* options */ }),
-  ],
-}
-```
-
-<br></details>
-
 
 <details>
 <summary>Webpack</summary><br>
@@ -62,28 +49,15 @@ module.exports = {
 <br></details>
 
 <details>
-<summary>Nuxt</summary><br>
-
-```ts
-// nuxt.config.js
-export default {
-  buildModules: [
-    ['unplugin-vue-jsx-hmr/nuxt', { /* options */ }],
-  ],
-}
-```
-
-> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
-
-<br></details>
-
-<details>
 <summary>Vue CLI</summary><br>
 
 ```ts
 // vue.config.js
 module.exports = {
   configureWebpack: {
+    chainWebpack(config) {
+      config.module.rules.delete('tsx')
+    },
     plugins: [
       require('unplugin-vue-jsx-hmr/webpack')({ /* options */ }),
     ],
@@ -93,17 +67,3 @@ module.exports = {
 
 <br></details>
 
-<details>
-<summary>esbuild</summary><br>
-
-```ts
-// esbuild.config.js
-import { build } from 'esbuild'
-import Starter from 'unplugin-vue-jsx-hmr/esbuild'
-
-build({
-  plugins: [Starter()],
-})
-```
-
-<br></details>
