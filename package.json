@@ -1,7 +1,7 @@
 {
   "name": "unplugin-vue-jsx-hmr",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "packageManager": "pnpm@7.27.0",
   "description": "Provides Vue 2/3 JSX & TSX support with HMR.",
   "license": "MIT",
