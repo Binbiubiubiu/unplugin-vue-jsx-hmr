@@ -1,5 +1,5 @@
 // Options
-import type { InputTargets } from './helper-compilation-targets'
+import type { InputTargets } from 'types/babel__helper-compilation-targets'
 
 // Use explicit modules to prevent typo errors.
 type ModuleOption =

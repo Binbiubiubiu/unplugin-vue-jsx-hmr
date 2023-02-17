@@ -1,0 +1,11 @@
+{
+  "name": "@types/babel__preset-env",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*"
+      ]
+    }
+  }
+}

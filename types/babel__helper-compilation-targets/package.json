@@ -1,0 +1,11 @@
+{
+  "name": "@types/babel__helper-compilation-targets",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*"
+      ]
+    }
+  }
+}

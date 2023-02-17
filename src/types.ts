@@ -1,8 +1,8 @@
 import type { PluginItem, TransformOptions } from '@babel/core'
 import type { VueJSXPluginOptions } from '@vue/babel-plugin-jsx'
 import type { FilterPattern } from '@rollup/pluginutils'
-import type { Options as BabelEnvOptions } from '../types/@babel/preset-env'
-import type { VueJSXPresetOptions } from '../types/@vue/babel-preset-jsx'
+import type { Options as BabelEnvOptions } from 'types/babel__preset-env'
+import type { VueJSXPresetOptions } from 'types/vue__babel-preset-jsx'
 
 export type VueVersion = 'auto' | 2 | 3
 

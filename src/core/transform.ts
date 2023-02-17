@@ -30,12 +30,14 @@ export class Transformer {
         { isTSX: true, allExtensions: true },
       ])
     }
+    const [filename] = id.split('?')
     const result = transformSync(code, {
+      cwd: this.ctx.root,
       babelrc: false,
       ast: true,
       configFile: false,
-      sourceFileName: id,
-      filename: id,
+      sourceFileName: filename,
+      filename,
       sourceMaps,
       presets: babelPresets,
       plugins: babelPlugins,

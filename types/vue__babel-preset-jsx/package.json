@@ -1,0 +1,11 @@
+{
+  "name": "@types/vue__babel-preset-jsx",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*"
+      ]
+    }
+  }
+}
